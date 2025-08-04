@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_schedule"
+        android:icon="@drawable/ic_schedule"
+        android:title="@string/jadwal" />
+    <item
+        android:id="@+id/nav_quran"
+        android:icon="@drawable/ic_quran"
+        android:title="@string/al_quran" />
+    <item
+        android:id="@+id/nav_mosque"
+        android:icon="@drawable/ic_mosque"
+        android:title="@string/masjid" />
+    <item
+        android:id="@+id/nav_prayer"
+        android:icon="@drawable/ic_prayer"
+        android:title="@string/doa" />
+    <item
+        android:id="@+id/nav_community"
+        android:icon="@drawable/ic_community"
+        android:title="@string/komunitas" />
+</menu>

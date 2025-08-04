@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Jabar Mengaji</string>
+    <string name="jadwal">Jadwal</string>
+    <string name="al_quran">Al-Qur\'an</string>
+    <string name="masjid">Masjid</string>
+    <string name="doa">Doa</string>
+    <string name="komunitas">Komunitas</string>
 </resources>

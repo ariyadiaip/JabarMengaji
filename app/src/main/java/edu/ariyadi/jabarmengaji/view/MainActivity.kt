@@ -1,4 +1,4 @@
-package edu.ariyadi.jabarmengaji
+package edu.ariyadi.jabarmengaji.view
 
 import android.os.Build
 import android.os.Bundle
