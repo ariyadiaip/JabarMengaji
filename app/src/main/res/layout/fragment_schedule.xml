@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ScheduleFragment"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvTitleSchedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/jadwal_sholat"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <RelativeLayout
+        android:id="@+id/rlSpin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitleSchedule"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/textlines"
+        android:gravity="center">
+
+        <Spinner
+            android:id="@+id/spinKota"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="end"
+        android:text="@string/tanggal"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/gray_800"
+        android:textSize="16sp"
+        android:layout_below="@id/rlSpin" />
+
+    <TextView
+        android:id="@+id/tvCurrentNextPrayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="start"
+        android:text="@string/waktu_etc"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@color/green_900"
+        android:textSize="18sp"
+        android:layout_below="@id/tvDate" />
+
+    <TextView
+        android:id="@+id/tvCurrentNextTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="start"
+        android:text="@string/time_etc"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/gray_600"
+        android:textSize="14sp"
+        android:layout_below="@id/tvCurrentNextPrayer" />
+
+    <TextView
+        android:id="@+id/btnQibla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="start"
+        android:text="@string/kiblat"
+        android:fontFamily="@font/roboto_medium"
+        android:background="@drawable/bg_black_button"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:layout_below="@id/tvDate"
+        android:textAllCaps="true"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="12dp"
+        android:layout_alignParentEnd="true"
+        android:drawablePadding="6dp"
+        app:drawableStartCompat="@drawable/ic_compass_mini" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tvCurrentNextTime"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/gray_300" />
+
+    <LinearLayout
+        android:id="@+id/llImsak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/bg_schedule_normal"
+        android:layout_marginBottom="4dp"
+        android:layout_below="@id/divider">
+
+        <TextView
+            android:id="@+id/tvImsak"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/imsak"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvTimeImsak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_04_32"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSubuh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/bg_schedule_normal"
+        android:layout_marginBottom="4dp"
+        android:layout_below="@id/llImsak">
+
+        <TextView
+            android:id="@+id/tvSubuh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/subuh"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvTimeSubuh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_04_42"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llTerbit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/bg_schedule_normal"
+        android:layout_marginBottom="4dp"
+        android:layout_below="@id/llSubuh">
+
+        <TextView
+            android:id="@+id/tvTerbit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/terbit"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvTimeTerbit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_05_56"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llDzuhur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/bg_schedule_normal"
+        android:layout_marginBottom="4dp"
+        android:layout_below="@id/llTerbit">
+
+        <TextView
+            android:id="@+id/tvDzuhur"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/dzuhur"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvTimeDzuhur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_11_59"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llAshar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/bg_schedule_normal"
+        android:layout_marginBottom="4dp"
+        android:layout_below="@id/llDzuhur">
+
+        <TextView
+            android:id="@+id/tvAshar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ashar"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvTimeAshar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_15_19"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llMaghrib"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/bg_schedule_normal"
+        android:layout_marginBottom="4dp"
+        android:layout_below="@id/llAshar">
+
+        <TextView
+            android:id="@+id/tvMaghrib"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/maghrib"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvTimeMaghrib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_17_54"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llIsya"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/bg_schedule_normal"
+        android:layout_marginBottom="4dp"
+        android:layout_below="@id/llMaghrib">
+
+        <TextView
+            android:id="@+id/tvIsya"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/isya"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvTimeIsya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_19_05"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
