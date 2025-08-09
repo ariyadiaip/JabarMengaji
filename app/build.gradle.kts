@@ -71,9 +71,13 @@ dependencies {
     implementation(libs.logging.interceptor)
     implementation(libs.androidx.recyclerview)
     implementation(libs.glide)
+    implementation(libs.qibla)
     implementation(libs.android.async.http)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.database.ktx)
     implementation(libs.firebase.auth.ktx)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    kapt(libs.androidx.room.compiler)
 
 }
