@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "last_city")
-data class LastCity(
+data class LastCityEntity(
     @PrimaryKey
     val id: String = "1",
     val cityId: String

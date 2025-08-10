@@ -1,7 +1,7 @@
 package edu.ariyadi.jabarmengaji.data.repository
 
 import edu.ariyadi.jabarmengaji.data.dao.LastCityDao
-import edu.ariyadi.jabarmengaji.data.model.LastCity
+import edu.ariyadi.jabarmengaji.data.model.LastCityEntity
 import edu.ariyadi.jabarmengaji.data.model.SholatResponse
 import edu.ariyadi.jabarmengaji.data.network.SholatApiService
 import javax.inject.Inject
@@ -15,7 +15,7 @@ class SholatRepository @Inject constructor(
     }
 
     suspend fun saveLastCity(cityId: String) {
-        lastCityDao.saveLastCity(LastCity(cityId = cityId))
+        lastCityDao.saveLastCity(LastCityEntity(cityId = cityId))
     }
 
     suspend fun getLastCityId(): String? {

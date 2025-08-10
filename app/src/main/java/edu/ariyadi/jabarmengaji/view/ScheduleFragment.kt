@@ -46,8 +46,8 @@ class ScheduleFragment : Fragment() {
 
         binding.btnQibla.setOnClickListener {
             val mainActivity = requireActivity() as MainActivity
+            mainActivity.navigateToFragment(QiblaFragment())
             mainActivity.hideBottomNav()
-            mainActivity.loadFragment(QiblaFragment())
         }
 
     }

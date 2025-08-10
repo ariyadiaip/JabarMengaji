@@ -52,6 +52,23 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
+    fun navigateToFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
+
+
+    override fun onBackPressed() {
+        if (supportFragmentManager.backStackEntryCount > 0) {
+            supportFragmentManager.popBackStack()
+            showBottomNav()
+        } else {
+            super.onBackPressed()
+        }
+    }
+
     fun hideBottomNav() {
         binding.bottomNavigation.visibility = View.GONE
     }

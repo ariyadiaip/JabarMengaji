@@ -35,8 +35,7 @@ class QiblaFragment : Fragment() {
 
         binding?.btnBack?.setOnClickListener {
             val mainActivity = requireActivity() as MainActivity
-            mainActivity.showBottomNav()
-            mainActivity.loadFragment(ScheduleFragment())
+            mainActivity.onBackPressed()
         }
 
         CompassQibla.Builder(requireActivity() as AppCompatActivity).onPermissionGranted { permission ->

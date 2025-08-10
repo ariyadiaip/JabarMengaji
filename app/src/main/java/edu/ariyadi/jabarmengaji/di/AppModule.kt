@@ -7,9 +7,12 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import edu.ariyadi.jabarmengaji.data.dao.DuaDao
 import edu.ariyadi.jabarmengaji.data.dao.LastCityDao
 import edu.ariyadi.jabarmengaji.data.database.AppDatabase
+import edu.ariyadi.jabarmengaji.data.network.DuaApiService
 import edu.ariyadi.jabarmengaji.data.network.SholatApiService
+import edu.ariyadi.jabarmengaji.data.repository.DuaRepository
 import edu.ariyadi.jabarmengaji.data.repository.SholatRepository
 import javax.inject.Singleton
 
@@ -24,7 +27,8 @@ object AppModule {
             context.applicationContext,
             AppDatabase::class.java,
             "jabar_mengaji_db"
-        ).build()
+        ).fallbackToDestructiveMigration()
+            .build()
     }
 
     @Provides
@@ -35,10 +39,26 @@ object AppModule {
 
     @Provides
     @Singleton
+    fun provideDuaDao(database: AppDatabase): DuaDao {
+        return database.duaDao()
+    }
+
+    @Provides
+    @Singleton
     fun provideSholatRepository(
         sholatApiService: SholatApiService,
         lastCityDao: LastCityDao
     ): SholatRepository {
         return SholatRepository(sholatApiService, lastCityDao)
     }
+
+    @Provides
+    @Singleton
+    fun provideDuaRepository(
+        duaApiService: DuaApiService,
+        duaDao: DuaDao
+    ): DuaRepository {
+        return DuaRepository(duaApiService, duaDao)
+    }
+
 }
