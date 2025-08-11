@@ -5,6 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import edu.ariyadi.jabarmengaji.data.network.DuaApiService
+import edu.ariyadi.jabarmengaji.data.network.QuranApiService
 import edu.ariyadi.jabarmengaji.data.network.SholatApiService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -33,7 +34,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    @Named("DuaRetrofit")
+    @Named("EQuranRetrofit")
     fun provideDuaRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl("https://equran.id/api/")
@@ -43,7 +44,14 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideDuaApiService(@Named("DuaRetrofit") retrofit: Retrofit): DuaApiService {
+    fun provideDuaApiService(@Named("EQuranRetrofit") retrofit: Retrofit): DuaApiService {
         return retrofit.create(DuaApiService::class.java)
     }
+
+    @Provides
+    @Singleton
+    fun provideQuranApiService(@Named("EQuranRetrofit") retrofit: Retrofit): QuranApiService {
+        return retrofit.create(QuranApiService::class.java)
+    }
+
 }

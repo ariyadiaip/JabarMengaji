@@ -27,7 +27,7 @@
             android:contentDescription="@string/back" />
 
         <TextView
-            android:id="@+id/tvTitleQibla"
+            android:id="@+id/tvTitleDua"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/detail_doa"

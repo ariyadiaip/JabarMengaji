@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="12dp">
+
+    <TextView
+        android:id="@+id/tvSurahNumber"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/bg_number"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:textColor="@color/green_900"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/tvSurahLatinName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_bold"
+        android:maxLines="1"
+        android:textColor="@color/text_black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvSurahArabicName"
+        app:layout_constraintStart_toEndOf="@id/tvSurahNumber"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Al-Fatihah" />
+
+    <TextView
+        android:id="@+id/tvSurahPlaceMeaning"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/roboto"
+        android:maxLines="1"
+        android:textAllCaps="true"
+        android:textColor="@color/gray_600"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/tvSurahLatinName"
+        app:layout_constraintTop_toBottomOf="@id/tvSurahLatinName"
+        tools:text="Mekah • Pembukaan" />
+
+    <TextView
+        android:id="@+id/tvSurahArabicName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/amiri_quran"
+        android:gravity="end"
+        android:textColor="@color/text_black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="الفاتحة" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
