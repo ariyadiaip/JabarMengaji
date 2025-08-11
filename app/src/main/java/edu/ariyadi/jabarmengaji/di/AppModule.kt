@@ -13,12 +13,17 @@ import edu.ariyadi.jabarmengaji.data.dao.LastCityDao
 import edu.ariyadi.jabarmengaji.data.dao.QuranDao
 import edu.ariyadi.jabarmengaji.data.database.AppDatabase
 import edu.ariyadi.jabarmengaji.data.network.DuaApiService
+import edu.ariyadi.jabarmengaji.data.network.PlacesApiService
 import edu.ariyadi.jabarmengaji.data.network.QuranApiService
 import edu.ariyadi.jabarmengaji.data.network.SholatApiService
 import edu.ariyadi.jabarmengaji.data.repository.CommunityRepository
 import edu.ariyadi.jabarmengaji.data.repository.DuaRepository
+import edu.ariyadi.jabarmengaji.data.repository.MosqueRepository
 import edu.ariyadi.jabarmengaji.data.repository.QuranRepository
 import edu.ariyadi.jabarmengaji.data.repository.SholatRepository
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -91,6 +96,28 @@ object AppModule {
     @Singleton
     fun provideCommunityRepository(firestore: FirebaseFirestore): CommunityRepository {
         return CommunityRepository(firestore)
+    }
+
+    @Provides
+    @Singleton
+    @Named("PlacesRetrofit")
+    fun providePlacesRetrofit(): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl("https://maps.googleapis.com/maps/api/place/nearbysearch/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun providePlacesApiService(@Named("PlacesRetrofit") retrofit: Retrofit): PlacesApiService {
+        return retrofit.create(PlacesApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideMosqueRepository(placesApiService: PlacesApiService): MosqueRepository {
+        return MosqueRepository(placesApiService)
     }
 
 }
