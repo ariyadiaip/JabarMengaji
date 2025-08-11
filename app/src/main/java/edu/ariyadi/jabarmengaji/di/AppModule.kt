@@ -2,6 +2,7 @@ package edu.ariyadi.jabarmengaji.di
 
 import android.content.Context
 import androidx.room.Room
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,6 +15,7 @@ import edu.ariyadi.jabarmengaji.data.database.AppDatabase
 import edu.ariyadi.jabarmengaji.data.network.DuaApiService
 import edu.ariyadi.jabarmengaji.data.network.QuranApiService
 import edu.ariyadi.jabarmengaji.data.network.SholatApiService
+import edu.ariyadi.jabarmengaji.data.repository.CommunityRepository
 import edu.ariyadi.jabarmengaji.data.repository.DuaRepository
 import edu.ariyadi.jabarmengaji.data.repository.QuranRepository
 import edu.ariyadi.jabarmengaji.data.repository.SholatRepository
@@ -77,6 +79,18 @@ object AppModule {
         quranDao: QuranDao
     ): QuranRepository {
         return QuranRepository(quranApiService, quranDao)
+    }
+
+    @Provides
+    @Singleton
+    fun provideFirebaseFirestore(): FirebaseFirestore {
+        return FirebaseFirestore.getInstance()
+    }
+
+    @Provides
+    @Singleton
+    fun provideCommunityRepository(firestore: FirebaseFirestore): CommunityRepository {
+        return CommunityRepository(firestore)
     }
 
 }
