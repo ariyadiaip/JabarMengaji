@@ -10,7 +10,7 @@
         android:id="@+id/tvTitleMosque"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="16dp"
+        android:paddingVertical="16dp"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/masjid_terdekat"
         android:textColor="@color/black"
