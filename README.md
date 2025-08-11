@@ -62,7 +62,7 @@ Aplikasi ini dirancang dengan tampilan modern, ringan, dan ramah pengguna.
 
 | Jadwal Sholat | Al-Quran | Komunitas |
 |---------------|----------|-----------|
-| ![Jadwal Sholat](screenshots/jadwal_sholat.png) | ![Al-Quran](screenshots/al_quran.png) | ![Komunitas](screenshots/komunitas.png) |
+| ![Jadwal Sholat](screenshots/jadwal_sholat.jpg) | ![Al-Quran](screenshots/al_quran.jpg) | ![Komunitas](screenshots/komunitas.jpg) |
 
 ---
 
