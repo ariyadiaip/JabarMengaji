@@ -29,4 +29,9 @@
     <color name="text_dark">#1E1E1E</color>
     <color name="text_black">#161616</color>
     <color name="text_gray">#858585</color>
+
+    <color name="walkthrough_1">#70CD94</color>
+    <color name="walkthrough_2">#1FB767</color>
+    <color name="walkthrough_3">#069550</color>
+
 </resources>

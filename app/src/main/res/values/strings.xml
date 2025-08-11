@@ -46,4 +46,16 @@
     <string name="play_audio">Play Audio</string>
     <string name="community_image">Community Image</string>
     <string name="masjid_terdekat">Masjid Terdekat</string>
+    <string name="skip">SKIP</string>
+    <string name="back_2">BACK</string>
+    <string name="next">NEXT</string>
+    <string name="finish">FINISH</string>
+
+    <string name="title_walkthrough_1">Jadwal Sholat Akurat</string>
+    <string name="title_walkthrough_2">Arah Kiblat Tepat</string>
+    <string name="title_walkthrough_3">Doa &amp; Al-Qur’an Digital</string>
+    <string name="desc_walkthrough_1">Pantau waktu sholat harian sesuai lokasi Anda.</string>
+    <string name="desc_walkthrough_2">Temukan arah kiblat dengan akurasi tinggi di mana pun Anda</string>
+    <string name="desc_walkthrough_3">Baca doa-doa pilihan dan Al-Qur’an lengkap di genggaman Anda.</string>
+    <string name="image">Image</string>
 </resources>
