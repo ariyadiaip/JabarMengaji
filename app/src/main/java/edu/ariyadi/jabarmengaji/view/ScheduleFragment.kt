@@ -58,6 +58,9 @@ class ScheduleFragment : Fragment() {
             R.layout.spinner_item_custom,
             Constants.JABAR_LOCATIONS.map { it.lokasi }
         )
+
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item_custom)
+
         binding.spinKota.adapter = adapter
 
         binding.spinKota.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
